@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "snake-demo"
+version = "0.1.0"
+description = ""
+authors = ["wulays <wulays@foxmail.com>"]
+readme = "README.md"
+packages = [{include = "snake_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygame = "^2.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
