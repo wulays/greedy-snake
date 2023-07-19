@@ -9,7 +9,8 @@ class Snake(Sprite):
 
         self.body = [(200, 200)]
         self.screen = game.screen
-        self.direction = 'right'
+        self.setting = game.setting
+        self.direction = 'up'
 
     def move(self):
         (x, y) = self.body[0]
@@ -38,3 +39,11 @@ class Snake(Sprite):
     def draw(self):
         for segment in self.body:
             pygame.draw.rect(self.screen, (0, 0, 0), (*segment, 10, 10))
+
+    def check_hit_wall(self):
+        (x, y) = self.body[0]
+        if x >= self.screen.get_rect().right - self.setting.grid_width or x <= 0:
+            return True
+        elif y >= self.screen.get_rect().bottom - self.setting.grid_height or y <= 0:
+            return True
+        return False

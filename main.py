@@ -30,7 +30,7 @@ class Game:
             self._create_food()
 
             self._update_screen()
-            clock.tick(24)
+            clock.tick(8)
 
     def _check_events(self):
 
@@ -55,6 +55,10 @@ class Game:
 
     def _update_screen(self):
         self.screen.fill(self.setting.bgColor)
+
+        if self.snake.check_hit_wall():
+            print('游戏结束！')
+            return
         self.snake.move()
         self.foods.draw(self.screen)
         self.snake.draw()

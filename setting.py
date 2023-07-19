@@ -7,6 +7,6 @@ class Setting():
 
         self.bgColor = (230, 230, 230)
 
-        self.food_width = 10
-        self.food_height = 10
+        self.grid_width = 10
+        self.grid_height = 10
 

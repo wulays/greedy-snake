@@ -11,7 +11,7 @@ class Food(Sprite):
         self.setting = game.setting
         self.screen = game.screen
 
-        self.image = pygame.Surface((self.setting.food_width, self.setting.food_height))
-        self.rect = pygame.Rect(0, 0, self.setting.food_width, self.setting.food_height)
-        self.rect.x = random.randint(0, self.setting.width / 10) * 10 - 10
-        self.rect.y = random.randint(0, self.setting.height / 10) * 10 - 10
+        self.image = pygame.Surface((self.setting.grid_width, self.setting.grid_height))
+        self.rect = pygame.Rect(0, 0, self.setting.grid_width, self.setting.grid_height)
+        self.rect.x = random.randint(0, self.setting.width / 10) * 10 - self.setting.grid_width
+        self.rect.y = random.randint(0, self.setting.height / 10) * 10 - self.setting.grid_height
